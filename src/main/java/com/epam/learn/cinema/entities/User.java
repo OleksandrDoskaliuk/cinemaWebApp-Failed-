@@ -1,7 +1,7 @@
 package com.epam.learn.cinema.entities;
 
 public class User {
-	private int id;
+	private int userId;
 	private String firstname;
 	private String lastname;
 	private String login;
@@ -10,8 +10,8 @@ public class User {
 	
 	public User() {};
 	
-	public User(int id, String firstname, String lastname, String login, String password, int roleId) {
-		this.id = id;
+	public User(int userId, String firstname, String lastname, String login, String password, int roleId) {
+		this.userId = userId;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.login = login;
@@ -19,15 +19,15 @@ public class User {
 		this.roleId = roleId;
 	}
 	
-	public static User createUser(int id, String firstname, String lastname, String login, String password, int roleId) {
-		return new User(id, firstname, lastname, login, password, roleId);
+	public static User createUser(int userId, String firstname, String lastname, String login, String password, int roleId) {
+		return new User(userId, firstname, lastname, login, password, roleId);
 	}
 	
-	public int getId() {
-		return id;
+	public int getUserId() {
+		return userId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	public String getFirstname() {
 		return firstname;
@@ -53,10 +53,10 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public int getroleId() {
+	public int getRoleId() {
 		return roleId;
 	}
-	public void setroleId(int roleId) {
+	public void setRoleId(int roleId) {
 		this.roleId = roleId;
 	}
 
@@ -65,7 +65,7 @@ public class User {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + firstname.hashCode();
-		result = prime * result + id;
+		result = prime * result + userId;
 		result = prime * result + lastname.hashCode();
 		result = prime * result + login.hashCode();
 		result = prime * result + password.hashCode();
@@ -87,7 +87,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", login=" + login
+		return "User [userId=" + userId + ", firstname=" + firstname + ", lastname=" + lastname + ", login=" + login
 				+ ", password=" + password + ", roleId=" + roleId + "]";
 	}
 }
