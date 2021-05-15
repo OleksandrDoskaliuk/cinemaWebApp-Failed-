@@ -1,4 +1,4 @@
-package com.epam.learn.cinema.dao.test;
+package com.epam.learn.cinema.dao.util.test;
 
 import java.sql.Connection;
 import java.sql.SQLException;

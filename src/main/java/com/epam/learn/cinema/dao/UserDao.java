@@ -11,7 +11,7 @@ public interface UserDao {
 	List<User> findAll() throws DaoException;
 	User findUserByLogin(String login) throws DaoException;
 	
-	User update(User user) throws DaoException;
+	boolean update(User user) throws DaoException;
 	
 	boolean delete(int id) throws DaoException;
 	boolean delete(User user) throws DaoException;

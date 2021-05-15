@@ -19,8 +19,8 @@ public class User {
 		this.roleId = roleId;
 	}
 	
-	public static User createUser(int userId, String firstname, String lastname, String login, String password, int roleId) {
-		return new User(userId, firstname, lastname, login, password, roleId);
+	public static User createUser(String firstname, String lastname, String login, String password, int roleId) {
+		return new User(0, firstname, lastname, login, password, roleId);
 	}
 	
 	public int getUserId() {

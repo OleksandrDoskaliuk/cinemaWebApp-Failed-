@@ -34,17 +34,17 @@ public class UserTest {
 	
 	@Test
 	public void userHashCodeTest() {
-		User first = User.createUser(userId, firstname, lastname, login, password, roleId);
-		User second = User.createUser(userId, firstname, lastname, login, password, roleId + 1);
+		User first = User.createUser(firstname, lastname, login, password, roleId);
+		User second = User.createUser(firstname, lastname, login, password, roleId + 1);
 		
 		Assert.assertNotEquals(first.hashCode(), second.hashCode());
 	}
 	
 	@Test
 	public void userEqualsTest() {
-		User first = User.createUser(userId, firstname, lastname, login, password, roleId);
-		User userWithSameLogin = User.createUser(userId + 1, "Andrii", "Lastivka", login, password, roleId + 1);
-		User userWithDiffLogin = User.createUser(userId + 2, "Andrii", "Lastivka", "newLogin", password, roleId + 2);
+		User first = User.createUser(firstname, lastname, login, password, roleId);
+		User userWithSameLogin = User.createUser("Andrii", "Lastivka", login, password, roleId + 1);
+		User userWithDiffLogin = User.createUser("Andrii", "Lastivka", "newLogin", password, roleId + 2);
 		
 		Assert.assertEquals(first, first);
 		Assert.assertEquals(first, userWithSameLogin);
@@ -54,8 +54,8 @@ public class UserTest {
 	
 	@Test
 	public void userToStringTest() {
-		User user = User.createUser(userId, firstname, lastname, login, password, roleId);
-		String expected = "User [userId=1, firstname=Ivan, lastname=Ivanovich, login=ivanIvanovicn, password=123, roleId=1]";
+		User user = User.createUser(firstname, lastname, login, password, roleId);
+		String expected = "User [userId=0, firstname=Ivan, lastname=Ivanovich, login=ivanIvanovicn, password=123, roleId=1]";
 		String actual = user.toString();
 		Assert.assertEquals(expected, actual);
 	}
