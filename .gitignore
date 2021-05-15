@@ -28,3 +28,6 @@ hs_err_pid*
 .classpath
 project
 .gitignore
+.classpath
+*.properties
+.settings/org.eclipse.wst.common.component
