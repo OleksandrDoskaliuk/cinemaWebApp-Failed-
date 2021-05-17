@@ -4,4 +4,17 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>Controller</servlet-name>
+  	<display-name>Controller</display-name>
+  	<description></description>
+  	<servlet-class>ua.lvil.learn.epam.odoskaliuk.cinema.web.Controller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Controller</servlet-name>
+  	<url-pattern>/Controller</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+  <welcome-file>home.jsp</welcome-file>
+  </welcome-file-list>
 </web-app>

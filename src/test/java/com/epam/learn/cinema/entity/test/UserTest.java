@@ -3,7 +3,7 @@ package com.epam.learn.cinema.entity.test;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.epam.learn.cinema.entities.User;
+import ua.lvil.leanr.epam.odoskaliuk.cinema.db.entities.User;
 
 public class UserTest {
 	private int userId = 1;

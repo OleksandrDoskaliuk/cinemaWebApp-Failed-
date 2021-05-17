@@ -7,12 +7,13 @@ import java.sql.Statement;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.epam.learn.cinema.dao.DaoException;
-import com.epam.learn.cinema.dao.mysql.MysqlRoleDaoImpl;
-import com.epam.learn.cinema.dao.mysql.MysqlUserDaoImpl;
-import com.epam.learn.cinema.dao.util.ConnectionCreator;
-import com.epam.learn.cinema.entities.Role;
-import com.epam.learn.cinema.entities.User;
+import ua.lvil.leanr.epam.odoskaliuk.cinema.db.entities.Role;
+import ua.lvil.leanr.epam.odoskaliuk.cinema.db.entities.User;
+import ua.lvil.learn.epam.odoskaliuk.cinema.db.dao.DaoException;
+import ua.lvil.learn.epam.odoskaliuk.cinema.db.dao.mysql.MysqlRoleDaoImpl;
+import ua.lvil.learn.epam.odoskaliuk.cinema.db.dao.mysql.MysqlUserDaoImpl;
+import ua.lvil.learn.epam.odoskaliuk.cinema.db.util.ConnectionCreator;
+
 import static org.junit.Assert.*;
 
 public class MysqlUserDaoImplTest {

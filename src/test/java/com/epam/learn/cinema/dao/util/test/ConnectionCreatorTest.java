@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.epam.learn.cinema.dao.util.ConnectionCreator;
+import ua.lvil.learn.epam.odoskaliuk.cinema.db.util.ConnectionCreator;
 
 public class ConnectionCreatorTest {
 	@Test
