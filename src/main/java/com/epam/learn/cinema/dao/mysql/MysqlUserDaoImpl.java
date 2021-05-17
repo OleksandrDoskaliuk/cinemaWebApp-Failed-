@@ -131,13 +131,32 @@ public class MysqlUserDaoImpl implements UserDao{
 
 	@Override
 	public boolean delete(int id) throws DaoException {
-		// TODO Auto-generated method stub
+		try (Connection con = ConnectionCreator.createConnection();
+				PreparedStatement ps = con.prepareStatement(UserQuery.DELETE_USER_BY_ID)) {
+			ps.setInt(1, id);
+			if (ps.executeUpdate() > 0) {
+				return true;
+			}
+		} catch (SQLException e) {
+			throw new DaoException(e);
+		}
 		return false;
 	}
 
 	@Override
 	public boolean delete(User user) throws DaoException {
-		// TODO Auto-generated method stub
+		try (Connection con = ConnectionCreator.createConnection();
+				PreparedStatement ps = con.prepareStatement(UserQuery.DELETE_USER_BY_PARAMS)) {
+			int k = 1;
+			ps.setString(k++, user.getFirstname());
+			ps.setString(k++, user.getLastname());
+			ps.setString(k++, user.getLogin());
+			if (ps.executeUpdate() > 0) {
+				return true;
+			}
+		} catch (SQLException e) {
+			throw new DaoException(e);
+		}
 		return false;
 	}
 

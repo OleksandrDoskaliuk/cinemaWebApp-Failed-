@@ -42,38 +42,32 @@ public class MysqlRoleDaoImpl implements RoleDao{
 
 	@Override
 	public Role findRoleById(int id) throws DaoException {
-		// TODO Auto-generated method stub
-		return null;
+		throw new DaoException("Unsuported operation");
 	}
 
 	@Override
 	public List<Role> findAll() throws DaoException {
-		// TODO Auto-generated method stub
-		return null;
+		throw new DaoException("Unsuported operation");
 	}
 
 	@Override
 	public Role findRoleByName(String name) throws DaoException {
-		// TODO Auto-generated method stub
-		return null;
+		throw new DaoException("Unsuported operation");
 	}
 
 	@Override
 	public Role update(Role role) throws DaoException {
-		// TODO Auto-generated method stub
-		return null;
+		throw new DaoException("Unsuported operation");
 	}
 
 	@Override
 	public boolean delete(int id) throws DaoException {
-		// TODO Auto-generated method stub
-		return false;
+		throw new DaoException("Unsuported operation");
 	}
 
 	@Override
 	public boolean delete(Role role) throws DaoException {
-		// TODO Auto-generated method stub
-		return false;
+		throw new DaoException("Unsuported operation");
 	}
 
 }
