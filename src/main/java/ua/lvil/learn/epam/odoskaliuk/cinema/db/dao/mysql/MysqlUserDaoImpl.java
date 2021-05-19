@@ -11,7 +11,8 @@ import java.util.List;
 import ua.lvil.leanr.epam.odoskaliuk.cinema.db.entities.User;
 import ua.lvil.learn.epam.odoskaliuk.cinema.db.dao.DaoException;
 import ua.lvil.learn.epam.odoskaliuk.cinema.db.dao.UserDao;
-import ua.lvil.learn.epam.odoskaliuk.cinema.db.dao.mysql.constants.UserQuery;
+import ua.lvil.learn.epam.odoskaliuk.cinema.db.dao.mysql.constants.queries.UserQuery;
+import ua.lvil.learn.epam.odoskaliuk.cinema.db.dao.mysql.constants.fields.UserField;
 import ua.lvil.learn.epam.odoskaliuk.cinema.db.util.ConnectionCreator;
 
 public class MysqlUserDaoImpl implements UserDao{
@@ -162,12 +163,12 @@ public class MysqlUserDaoImpl implements UserDao{
 
 	private User createUserFromResulSet(ResultSet rs) throws SQLException {
 		User user = new User();
-		user.setUserId(rs.getInt(UserQuery.USER_ID));
-		user.setFirstname(rs.getString(UserQuery.FIRSTNAME));
-		user.setLastname(rs.getString(UserQuery.LASTNAME));
-		user.setLogin(rs.getString(UserQuery.LOGIN));
-		user.setPassword(rs.getString(UserQuery.PASSWORD));
-		user.setRoleId(rs.getInt(UserQuery.ROLE_ID));
+		user.setUserId(rs.getInt(UserField.USER_ID));
+		user.setFirstname(rs.getString(UserField.USER_FIRSTNAME));
+		user.setLastname(rs.getString(UserField.USER_LASTNAME));
+		user.setLogin(rs.getString(UserField.USER_LOGIN));
+		user.setPassword(rs.getString(UserField.USER_PASSWORD));
+		user.setRoleId(rs.getInt(UserField.USER_ROLE_ID));
 		return user;
 	}
 }

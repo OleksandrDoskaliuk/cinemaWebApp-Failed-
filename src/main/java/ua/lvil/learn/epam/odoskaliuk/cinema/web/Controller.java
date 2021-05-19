@@ -16,6 +16,7 @@ public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("doGet");
 		process(request, response);
 	}
 
@@ -36,9 +37,10 @@ public class Controller extends HttpServlet {
 		} catch (DaoException e) {
 			e.printStackTrace();
 		}
-		
+		System.out.println("Forward str = " + forward);
 		if (forward != null) {
 			RequestDispatcher view = request.getRequestDispatcher(forward);
+			System.out.println("lodaded view:" + view + "\nForwarding...");
 			view.forward(request, response);
 		}
 	}

@@ -1,17 +1,20 @@
 package ua.lvil.leanr.epam.odoskaliuk.cinema.db.entities;
 
+import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDateTime;
 
-public class Session {
+import ua.lvil.learn.epam.odoskaliuk.cinema.db.util.MysqlDateFormatter;
+
+public class ScheduleSession {
 	private int sessionId;
 	private int movieId;
 	private int cinemaHallId;
-	private Date startTime;
+	private LocalDateTime startTime;
 	
-	public Session() {}
+	public ScheduleSession() {}
 
-	public Session(int sessionId, int movieId, int cinemaHallId, Date startTime) {
+	public ScheduleSession(int sessionId, int movieId, int cinemaHallId, LocalDateTime startTime) {
 		super();
 		this.sessionId = sessionId;
 		this.movieId = movieId;
@@ -19,8 +22,8 @@ public class Session {
 		this.startTime = startTime;
 	}
 	
-	public static Session createSession(int sessionId, int movieId, int cinemaHallId, Date startTime) {
-		return new Session(sessionId, movieId, cinemaHallId, startTime);
+	public static ScheduleSession createSession(int sessionId, int movieId, int cinemaHallId, LocalDateTime startTime) {
+		return new ScheduleSession(sessionId, movieId, cinemaHallId, startTime);
 	}
 
 	public int getSessionId() {
@@ -47,11 +50,11 @@ public class Session {
 		this.cinemaHallId = cinemaHallId;
 	}
 
-	public Date getStartTime() {
+	public LocalDateTime getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(Date startTime) {
+	public void setStartTime(LocalDateTime startTime) {
 		this.startTime = startTime;
 	}
 
@@ -71,19 +74,17 @@ public class Session {
 		if (this == obj) {
 			return true;
 		}
-		if (!(obj instanceof Session)) {
+		if (!(obj instanceof ScheduleSession)) {
 			return false;
 		}
-		Session session = (Session) obj;
-		return session.startTime.equals(getStartTime());
+		ScheduleSession scheduleSession = (ScheduleSession) obj;
+		return scheduleSession.startTime.equals(getStartTime());
 	}
 
 	@Override
 	public String toString() {
-		SimpleDateFormat sdf = 
-			     new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		return "Session [sessionId=" + sessionId + ", movieId=" + movieId + ", cinemaHallId=" + cinemaHallId
-				+ ", startTime=" + sdf.format(startTime) + "]";
+				+ ", startTime=" + MysqlDateFormatter.getStringFromLocalDateTime(startTime) + "]";
 	}
 	
 	

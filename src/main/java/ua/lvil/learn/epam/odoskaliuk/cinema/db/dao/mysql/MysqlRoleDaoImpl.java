@@ -10,7 +10,7 @@ import java.util.List;
 import ua.lvil.leanr.epam.odoskaliuk.cinema.db.entities.Role;
 import ua.lvil.learn.epam.odoskaliuk.cinema.db.dao.DaoException;
 import ua.lvil.learn.epam.odoskaliuk.cinema.db.dao.RoleDao;
-import ua.lvil.learn.epam.odoskaliuk.cinema.db.dao.mysql.constants.RoleQuery;
+import ua.lvil.learn.epam.odoskaliuk.cinema.db.dao.mysql.constants.queries.RoleQuery;
 import ua.lvil.learn.epam.odoskaliuk.cinema.db.util.ConnectionCreator;
 
 public class MysqlRoleDaoImpl implements RoleDao{

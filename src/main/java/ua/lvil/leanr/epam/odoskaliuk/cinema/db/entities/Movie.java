@@ -6,16 +6,14 @@ public class Movie {
 	private int movieId;
 	private String name;
 	private int duration;
-	private byte[] image;
 	
 	public Movie() {}
 
-	public Movie(int movieId, String name, int duration, byte[] image) {
+	public Movie(int movieId, String name, int duration) {
 		super();
 		this.movieId = movieId;
 		this.name = name;
 		this.duration = duration;
-		this.image = image;
 	}
 
 	public int getMovieId() {
@@ -42,20 +40,11 @@ public class Movie {
 		this.duration = duration;
 	}
 
-	public byte[] getImage() {
-		return image;
-	}
-
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + duration;
-		result = prime * result + Arrays.hashCode(image);
 		result = prime * result + movieId;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;

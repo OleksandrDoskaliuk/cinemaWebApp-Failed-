@@ -5,20 +5,18 @@ public class Ticket {
 	private int userId;
 	private int sessionId;
 	private int seatNumberId;
-	private int price;
 	
 	public Ticket() {}
 
-	public Ticket(int ticketId, int userId, int sessionId, int seatNumberId, int price) {
+	public Ticket(int ticketId, int userId, int sessionId, int seatNumberId) {
 		this.ticketId = ticketId;
 		this.userId = userId;
 		this.sessionId = sessionId;
 		this.seatNumberId = seatNumberId;
-		this.price = price;
 	}
 	
-	public static Ticket createTicket(int ticketId, int userId, int sessionId, int seatNumberId, int price) {
-		return new Ticket(ticketId, userId, sessionId, seatNumberId, price);
+	public static Ticket createTicket(int ticketId, int userId, int sessionId, int seatNumberId) {
+		return new Ticket(ticketId, userId, sessionId, seatNumberId);
 	}
 
 	public int getTicketId() {
@@ -53,19 +51,11 @@ public class Ticket {
 		this.seatNumberId = seatNumberId;
 	}
 
-	public int getPrice() {
-		return price;
-	}
-
-	public void setPrice(int price) {
-		this.price = price;
-	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + price;
 		result = prime * result + seatNumberId;
 		result = prime * result + sessionId;
 		result = prime * result + ticketId;

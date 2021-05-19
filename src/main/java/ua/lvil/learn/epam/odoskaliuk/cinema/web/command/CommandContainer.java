@@ -8,6 +8,7 @@ public class CommandContainer {
 	private static Map<String, Command> commands = new TreeMap<String, Command>();
 	
 	static {
+		commands.put("schedule", new ScheduleСommand());
 		/*
 		commands.put("login", new LoginCommand());
 		commands.put("logout", new LogoutCommand());
